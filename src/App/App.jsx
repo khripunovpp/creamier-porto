@@ -5,18 +5,24 @@ function App() {
 
     return (
         <section className="tail">
-            <div className="tail__bg" aria-hidden="true">
-                <img src="/img/bg.png" alt="Creamier" className="tail__bg-image" loading="lazy"/>
-            </div>
-            <section className="tail__inner">
-                <div className="container">
+            <div className="container">
+                <div className="tail__bg" aria-hidden="true">
+                    <img src="/img/bg.png" alt="Creamier" className="tail__bg-image" loading="lazy"/>
+                </div>
+                <section className="tail__inner">
                     <header className="header">
-                        <h1 className="header__title">
-                            Menu
-                        </h1>
-                        <p className="header__subtitle">
-                            Eclairs
-                        </p>
+                        <div className="header__drake" aria-hidden="true">
+                            <img src="/img/drake.png" alt="Creamier" className="header__drake-image"
+                                 loading="lazy"/>
+                        </div>
+                        <div className="header__inner">
+                            <h1 className="header__title">
+                                Menu
+                            </h1>
+                            <p className="header__subtitle">
+                                Eclairs
+                            </p>
+                        </div>
                     </header>
 
                     <main className="menu">
@@ -62,8 +68,16 @@ function App() {
                             </li>
                         </ul>
                     </main>
-                </div>
-            </section>
+
+                    <section className="contacts">
+
+
+                        <button className="button">Payments</button>
+                    </section>
+
+                    <footer className="footer"></footer>
+                </section>
+            </div>
         </section>
     )
 }
