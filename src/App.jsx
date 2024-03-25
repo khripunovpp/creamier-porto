@@ -9,6 +9,7 @@ import {IngredientsDialog} from "./IngredientsDialog.jsx";
 function App() {
     const [displayed] = useAtom(dialog)
     const overlayHeight = window.innerHeight
+    const year = new Date().getFullYear()
     return (
         <section className="tail">
             <div className={`tail__fakeOverlay ${displayed ? 'visible' : ''}`} aria-hidden="true"
@@ -35,9 +36,18 @@ function App() {
                     <Menu/>
                     <section className="contacts">
                         <PaymentsDialog/>
+                        <a href="https://instagram.com/creamier.porto/"
+                           className="contacts__link contacts__link--instagram"
+                           target="_blank" rel="noreferrer">
+                            <span className="contacts__link-text">Instagram</span>
+                        </a>
                     </section>
 
-                    <footer className="footer"></footer>
+                    <footer className="footer">
+                        <p className="footer__text">
+                            &copy; All rights reserved {year}
+                        </p>
+                    </footer>
                 </section>
             </div>
         </section>
