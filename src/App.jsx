@@ -1,10 +1,13 @@
 import {PaymentsDialog} from "./PaymentsDialog.jsx";
 import drake from "/img/drake.png";
 import bg from "/img/bg.png";
+import line1 from "/img/line-1.png";
+import line2 from "/img/line-2.png";
+import line3 from "/img/line-3.png";
+import line4 from "/img/line-4.png";
 import {useAtom} from "jotai";
 import {dialog} from "./main.jsx";
 import {Menu} from "./Menu.jsx";
-import {IngredientsDialog} from "./IngredientsDialog.jsx";
 
 function App() {
     const [displayed] = useAtom(dialog)
@@ -12,8 +15,20 @@ function App() {
     const year = new Date().getFullYear()
     return (
         <section className="tail">
+            <div className="line line-1" aria-hidden="true">
+                <img src={line1} alt="" loading="lazy"/>
+            </div>
+            <div className="line line-2" aria-hidden="true">
+                <img src={line2} alt="" loading="lazy"/>
+            </div>
+            <div className="line line-3" aria-hidden="true">
+                <img src={line3} alt="" loading="lazy"/>
+            </div>
+            <div className="line line-4" aria-hidden="true">
+                <img src={line4} alt="" loading="lazy"/>
+            </div>
             <div className={`tail__fakeOverlay ${displayed ? 'visible' : ''}`} aria-hidden="true"
-                 style={{height: overlayHeight}}/>
+                 style={{minHeight: overlayHeight}}/>
             <div className="container">
                 <div className="tail__bg" aria-hidden="true">
                     <img src={bg} alt="Creamier" className="tail__bg-image" loading="lazy"/>

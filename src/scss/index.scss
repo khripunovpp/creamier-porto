@@ -88,18 +88,6 @@ img {
   }
 }
 
-.button:hover {
-  --hover: rgba(255, 255, 255, 0.3);
-
-  &::after {
-    opacity: 1;
-  }
-
-  @media (hover: none) {
-    --hover: transparent;
-  }
-
-}
 
 .popup {
   &-content {
@@ -159,7 +147,8 @@ img {
 .tail {
   position: relative;
   overflow: hidden;
-  padding: 40px 0;
+  padding: min(12vw, 60px) 0 min(7vw, 40px);
+  min-height: 100vh;
 
   &__fakeOverlay {
     backdrop-filter: blur(5px);
@@ -192,7 +181,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 500px;
+    min-width: 800px;
     opacity: 0.25;
 
     img {
@@ -278,6 +267,7 @@ img {
     padding-top: 1em;
     text-wrap: balance;
     white-space: pre-wrap;
+    cursor: pointer;
 
     span {
       display: table-cell;
@@ -319,6 +309,7 @@ img {
     font-size: min(8vw, 50px);
     display: block;
     margin-top: 20px;
+    cursor: pointer;
   }
 }
 
@@ -394,4 +385,58 @@ img {
   color: $text;
   text-align: center;
   margin-top: 40px;
+}
+
+.line {
+  position: absolute;
+  z-index: 1;
+
+  img {
+    display: block;
+  }
+
+  &-1 {
+    left: 0;
+    top: 0;
+    @media screen and (max-width: 500px) {
+      width: 200px;
+    }
+    @media screen and (max-width: 500px) {
+      width: 140px;
+    }
+  }
+
+  &-2 {
+    right: 0;
+    top: 0;
+    @media screen and (max-width: 1000px) {
+      width: 100px;
+    }
+    @media screen and (max-width: 500px) {
+      width: 50px;
+    }
+  }
+
+  &-3 {
+    left: 0;
+    bottom: 0;
+    @media screen and (max-width: 1100px) {
+      width: 200px;
+    }
+    @media screen and (max-width: 600px) {
+      width: 120px;
+    }
+  }
+
+  &-4 {
+    right: 0;
+    bottom: 0;
+
+    @media screen and (max-width: 1100px) {
+      width: 200px;
+    }
+    @media screen and (max-width: 600px) {
+      width: 80px;
+    }
+  }
 }
