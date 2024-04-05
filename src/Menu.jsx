@@ -67,7 +67,11 @@ export const Menu = () => {
     const addToCart = (menuItem, count) => {
         setToCart(storedItems => {
             if (storedItems[menuItem.name]) {
-                storedItems[menuItem.name].count = count
+                if (storedItems[menuItem.name].count === count)  {
+                    delete storedItems[menuItem.name]
+                } else {
+                    storedItems[menuItem.name].count = count
+                }
             } else {
                 storedItems[menuItem.name] = {
                     ...menuItem,
