@@ -263,7 +263,7 @@ img {
 
   &__item {
     display: table;
-    line-height: 0.9;
+    line-height: 1;
     padding-top: 1em;
     text-wrap: balance;
     white-space: pre-wrap;
@@ -322,6 +322,7 @@ img {
     margin: 0 0 30px;
     font-family: "GoodDog", sans-serif;
     text-align: center;
+    white-space: pre-wrap;
   }
 
   &__body {
@@ -366,6 +367,7 @@ img {
     &-value {
       font-weight: 700;
       font-size: min(4.8vw, 20px);
+      word-break: break-all;
     }
 
     &-copy {

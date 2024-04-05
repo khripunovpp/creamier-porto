@@ -11,7 +11,7 @@ export const IngredientsDialog = ({
     return (
         <Dialog title={title} trigger={trigger}>
             <div className="dialog__body">
-                <p>{body}</p>
+                <p>Ingredients (NOT descending): {body}</p>
             </div>
         </Dialog>
     )

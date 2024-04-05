@@ -9,19 +9,19 @@ import {Dialog} from "./Dialog.jsx";
 const payments = [
     {
         label: 'IBAN',
-        value: 'DE12500105170648489890'
+        value: 'FR7617598000010001700202927'
     },
     {
         label: 'Account Name',
-        value: 'John Doe'
+        value: 'Logunov Maksim'
     },
     {
         label: 'Bank Name',
-        value: 'ING'
+        value: 'LYDIA SOLUTIONS'
     },
     {
         label: 'BIC',
-        value: 'INGDDEFFXXX'
+        value: 'LYDIFRP2XXX'
     },
 ]
 
@@ -81,8 +81,7 @@ const paymentsList = () => {
 
 export const PaymentsDialog = () => {
     return (
-
-        <Dialog trigger={<button className="button">Payments</button>} title="Payment information">
+        <Dialog trigger={<button className="button">Payment</button>} title="Payment information">
             <ul className="payments-list">
                 {paymentsList()}
             </ul>
