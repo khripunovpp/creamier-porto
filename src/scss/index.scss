@@ -262,12 +262,18 @@ img {
   }
 
   &__item {
-    display: table;
-    line-height: 1;
-    padding-top: 1em;
-    text-wrap: balance;
-    white-space: pre-wrap;
-    cursor: pointer;
+    &-inner {
+      display: table;
+      line-height: 1;
+      padding-top: 1em;
+      text-wrap: balance;
+      white-space: pre-wrap;
+      cursor: pointer;
+    }
+
+    &-footer {
+      font-size: initial;
+    }
 
     span {
       display: table-cell;
@@ -440,5 +446,37 @@ img {
     @media screen and (max-width: 600px) {
       width: 80px;
     }
+  }
+}
+
+.countlist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  li {
+    flex: 1 1;
+    text-align: center;
+    background-color: $bgPopup;
+    line-height: 1;
+
+    &.active {
+      background-color: $text;
+      color: $bgPopup;
+    }
+  }
+
+  button {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    padding: 0;
+    font-size: 20px;
+    width: 100%;
   }
 }

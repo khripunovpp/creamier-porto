@@ -11,6 +11,10 @@ toastConfig({
 })
 export const dialog = atom(false)
 
+const hasCalcInURL = window.location.search.includes('calc')
+export const calcMode = atom(hasCalcInURL)
+export const cartItems = atom({})
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
