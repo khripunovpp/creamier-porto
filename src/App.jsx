@@ -6,14 +6,16 @@ import line2 from "/img/line-2.png";
 import line3 from "/img/line-3.png";
 import line4 from "/img/line-4.png";
 import {useAtom} from "jotai";
-import {dialog} from "./main.jsx";
+import {calcMode, dialog} from "./main.jsx";
 import {Menu} from "./Menu.jsx";
+import {FloatTotal} from "./FloatTotal.jsx";
 
 function App() {
     const [displayed] = useAtom(dialog)
+    const [showCalc] = useAtom(calcMode)
     const overlayHeight = window.innerHeight
     const year = new Date().getFullYear()
-    return (
+    return <>
         <section className="tail">
             <div className="line line-1" aria-hidden="true">
                 <img src={line1} alt="" loading="lazy"/>
@@ -66,7 +68,11 @@ function App() {
                 </section>
             </div>
         </section>
-    )
+
+        {
+            showCalc ? <FloatTotal /> : null
+        }
+    </>
 }
 
 export default App

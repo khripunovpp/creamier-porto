@@ -23,7 +23,7 @@ a:hover {
 body {
   margin: 0;
   font-size-adjust: none;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: $systemFF;
   line-height: 1.5;
   font-weight: 400;
   background-color: $bg;
@@ -47,6 +47,12 @@ body {
 ::selection {
   background-color: $text;
   color: $bg;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 img {
@@ -456,7 +462,7 @@ img {
   margin-top: 20px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 
   li {
     flex: 1 1;
@@ -476,7 +482,39 @@ img {
     border: none;
     color: inherit;
     padding: 0;
-    font-size: 20px;
+    font-size: 25px;
     width: 100%;
   }
+}
+
+.total {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(254, 191, 164, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+
+  p {
+    margin: 0;
+    font-size: 25px;
+    color: $text;
+    font-weight: 700;
+  }
+}
+
+.button-simple {
+  appearance: none;
+  background-color: $text;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: $systemFF;
+  font-size: 16px;
+    padding: 10px 20px;
 }
