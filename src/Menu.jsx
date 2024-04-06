@@ -1,5 +1,5 @@
 import {IngredientsDialog} from "./IngredientsDialog.jsx";
-import {useAtom, useAtomValue, useSetAtom} from "jotai";
+import {useAtom, useAtomValue} from "jotai";
 import {calcMode, cartItems} from "./main.jsx";
 
 const menuItems = [
@@ -24,14 +24,9 @@ const menuItems = [
         ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, white chocolate Callebaut, salt, sugar, coconut milk 70%, cream 35%, almond paste, condensed milk, gelatin 220bloom, blanched almonds, vegetable oil \n'
     },
     {
-        name: 'Medovik BUT \nraspberry + pistachio version',
-        price: '5',
+        name: 'Medovik BUT \nberry + pistachio version',
+        price: '4.5',
         ingredients: 'water, milk, flour T00, flour T50, eggs, cream, sugar, salt, butter 83%, sour cream 20%, flower honey, raspberry confit, pistachio paste 40%, lemon juice, baking powder'
-    },
-    {
-        name: 'Pistachio',
-        price: '4',
-        ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, white chocolate Callebaut, salt, sugar, cream, cornstarch, dessert pistachio paste 40%, pistachio paste 100%'
     },
 ]
 
