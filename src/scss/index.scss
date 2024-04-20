@@ -256,8 +256,27 @@ img {
 .menu {
   color: $text;
   font-family: "GoodDog", sans-serif;
-  font-size: min(10vw, 60px);
   margin-bottom: 40px;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 1em;
+    line-height: 1;
+    margin-top: 1em;
+    font-size: 35px;
+  }
+
+  &__sizes {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    b {
+      display: inline-block;
+      border-bottom: 4px solid $captionShadow;
+      font-size: 1.6em;
+    }
+  }
 
   &__list {
     list-style: none;
@@ -265,13 +284,19 @@ img {
     margin: 0;
     display: flex;
     flex-direction: column;
+    font-size: min(10vw, 60px);
   }
 
   &__item {
+    padding-bottom: 1em;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
     &-inner {
       display: table;
       line-height: 1;
-      padding-top: 1em;
       text-wrap: balance;
       white-space: pre-wrap;
       cursor: pointer;
@@ -289,14 +314,6 @@ img {
       position: relative;
       overflow: hidden;
 
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 7px;
-        margin-left: 5px;
-        width: 100%;
-        border-bottom: 1px solid $text;
-      }
     }
 
     &-price {
@@ -307,6 +324,23 @@ img {
       white-space: nowrap;
     }
 
+
+    &--withPrice {
+      .menu {
+        &__item {
+          &-name {
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: 7px;
+              margin-left: 5px;
+              width: 100%;
+              border-bottom: 1px solid $text;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -516,5 +550,5 @@ img {
   cursor: pointer;
   font-family: $systemFF;
   font-size: 16px;
-    padding: 10px 20px;
+  padding: 10px 20px;
 }
