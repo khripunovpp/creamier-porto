@@ -1,19 +1,24 @@
-import {IngredientsDialog} from "./IngredientsDialog.jsx";
 import {useAtom, useAtomValue} from "jotai";
 import {calcMode, cartItems} from "./main.jsx";
 
 const menuItems = [
     {
-        name: 'Medovik \n(sugared nuts // sour cream filling)',
-        ingredients: 'water, milk, flour T00, flour T50, eggs, cream, sugar, salt, butter 83%, sour cream 20%, flower honey, mix of sugared walnuts and pecans, boiled condensed milk, lemon juice, cottage cheese, baking powder'
+        name: 'Choux \nLemon+Basil',
+        ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, white chocolate Callebaut, milk chocolate Callebaut, sugar, salt, cream, glucose syrup, hazelnut paste, cocoa butter',
+        price: 2.5,
     },
+    // {
+    //     name: 'Medovik \n(sugared nuts // sour cream filling)',
+    //     ingredients: 'water, milk, flour T00, flour T50, eggs, cream, sugar, salt, butter 83%, sour cream 20%, flower honey, mix of sugared walnuts and pecans, boiled condensed milk, lemon juice, cottage cheese, baking powder'
+    // },
     // {
     //     name: 'Rose-Raspberry \nwith vanilla cream & raspberry+rose confit',
     //     ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, salt, sugar, cream, white chocolate Callebaut, gelatin, vanilla paste Guzman, raspberry puree, rose confit, pectin NH, lemon juice, glucose syrup, food coloring Fuksia Guzman'
     // },
     {
         name: 'Golden bar \nwith Hazelnut Cream and Salted Caramel',
-        ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, white chocolate Callebaut, milk chocolate Callebaut, sugar, salt, cream, glucose syrup, hazelnut paste, cocoa butter'
+        ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, white chocolate Callebaut, milk chocolate Callebaut, sugar, salt, cream, glucose syrup, hazelnut paste, cocoa butter',
+        price: 3.5,
     },
     // {
     //     name: 'Raffaello \nwith Almond-Coconut Cream',
@@ -25,11 +30,17 @@ const menuItems = [
     // },
     {
         name: 'Pistachio',
-        ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, white chocolate Callebaut, salt, sugar, cream, cornstarch, dessert pistachio paste 40%, pistachio paste 100%'
+        ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, white chocolate Callebaut, salt, sugar, cream, cornstarch, dessert pistachio paste 40%, pistachio paste 100%',
+        price: 3.5,
     },
+    // {
+    //     name: 'Banoffee',
+    //     ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, caramel chocolate Cacao Barry, white chocolate Cacao Barry, salt, sugar, cream, boiled condensed milk, mascarpone, glucose syrop, banana, banana paste GUZMAN'
+    // },
     {
-        name: 'Banoffee',
-        ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, caramel chocolate Cacao Barry, white chocolate Cacao Barry, salt, sugar, cream, boiled condensed milk, mascarpone, glucose syrop, banana, banana paste GUZMAN'
+        name: 'Mango + Passsion Fruit',
+        price: 3.5,
+        // ingredients: 'water, milk, flour T00, flour T50, eggs, cream, sugar, salt, butter 83%, sour cream 20%, flower honey, mix of sugared walnuts and pecans, boiled condensed milk, lemon juice, cottage cheese, baking powder'
     },
 ]
 
@@ -38,14 +49,14 @@ const item = ({name, price}) =>
                          <span className="menu__item-name">
                         {name}
                     </span>
-        {/*<span className="menu__item-price">*/}
-        {/*                {price}€*/}
-        {/*            </span>*/}
+        <span className="menu__item-price">
+                        {price}€
+                    </span>
     </div>
 
 const countArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-const Buttons = ({choised,name}) => {
+const Buttons = ({choised, name}) => {
     const items = useAtomValue(cartItems)
     const activeCount = items[name] ? items[name].count : 0
     return <ul className="countlist">
@@ -65,7 +76,7 @@ export const Menu = () => {
     const addToCart = (menuItem, count) => {
         setToCart(storedItems => {
             if (storedItems[menuItem.name]) {
-                if (storedItems[menuItem.name].count === count)  {
+                if (storedItems[menuItem.name].count === count) {
                     delete storedItems[menuItem.name]
                 } else {
                     storedItems[menuItem.name].count = count
@@ -82,19 +93,12 @@ export const Menu = () => {
     }
 
     return <main className="menu">
-        <section className="menu__header">
-            <div className="menu__sizes">
-                <span>Original <b>4€</b></span><span>Mini <b>2€</b></span>
-            </div>
-        </section>
+
         <ul className="menu__list">
             {menuItems.map(it => {
                 const {name, price, ingredients} = it
                 return <li className="menu__item" key={name}>
-                    <IngredientsDialog key={name}
-                                       title={name}
-                                       body={ingredients}
-                                       trigger={item({name, price})}/>
+                    {item(it)}
 
                     <div className="menu__item-footer">
                         {showCalc ? <Buttons choised={c => addToCart(it, c)} name={name}/> : null}
