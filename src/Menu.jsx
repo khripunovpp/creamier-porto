@@ -3,14 +3,10 @@ import {calcMode, cartItems} from "./main.jsx";
 
 const menuItems = [
     {
-        name: 'Choux \nLemon+Basil',
-        ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, white chocolate Callebaut, milk chocolate Callebaut, sugar, salt, cream, glucose syrup, hazelnut paste, cocoa butter',
-        price: 2.5,
+        name: 'Medovik \n(sugared nuts // sour cream filling)',
+        ingredients: 'water, milk, flour T00, flour T50, eggs, cream, sugar, salt, butter 83%, sour cream 20%, flower honey, mix of sugared walnuts and pecans, boiled condensed milk, lemon juice, cottage cheese, baking powder',
+        price: 4
     },
-    // {
-    //     name: 'Medovik \n(sugared nuts // sour cream filling)',
-    //     ingredients: 'water, milk, flour T00, flour T50, eggs, cream, sugar, salt, butter 83%, sour cream 20%, flower honey, mix of sugared walnuts and pecans, boiled condensed milk, lemon juice, cottage cheese, baking powder'
-    // },
     // {
     //     name: 'Rose-Raspberry \nwith vanilla cream & raspberry+rose confit',
     //     ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, salt, sugar, cream, white chocolate Callebaut, gelatin, vanilla paste Guzman, raspberry puree, rose confit, pectin NH, lemon juice, glucose syrup, food coloring Fuksia Guzman'
@@ -18,30 +14,39 @@ const menuItems = [
     {
         name: 'Golden bar \nwith Hazelnut Cream and Salted Caramel',
         ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, white chocolate Callebaut, milk chocolate Callebaut, sugar, salt, cream, glucose syrup, hazelnut paste, cocoa butter',
-        price: 3.5,
+        price: 4,
     },
-    // {
-    //     name: 'Raffaello \nwith Almond-Coconut Cream',
-    //     ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, white chocolate Callebaut, salt, sugar, coconut milk 70%, cream 35%, almond paste, condensed milk, gelatin 220bloom, blanched almonds, vegetable oil \n'
-    // },
+    {
+        name: 'Pistachio',
+        ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, white chocolate Callebaut, salt, sugar, cream, cornstarch, dessert pistachio paste 40%, pistachio paste 100%',
+        price: 4,
+    },
+    {
+        name: 'Raffaello \nwith Almond-Coconut Cream',
+        ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, white chocolate Callebaut, salt, sugar, coconut milk 70%, cream 35%, almond paste, condensed milk, gelatin 220bloom, blanched almonds, vegetable oil \n',
+        price: 3
+    },
+    {
+        name: 'Choux \nLemon+Basil',
+        price: 3,
+    },
+    {
+        name: 'Cookies Triple Choc',
+        price: 2.5,
+    },
     // {
     //     name: 'Medovik BUT \nberry + pistachio version',
     //     ingredients: 'water, milk, flour T00, flour T50, eggs, cream, sugar, salt, butter 83%, sour cream 20%, flower honey, raspberry confit, pistachio paste 40%, lemon juice, baking powder'
     // },
-    {
-        name: 'Pistachio',
-        ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, white chocolate Callebaut, salt, sugar, cream, cornstarch, dessert pistachio paste 40%, pistachio paste 100%',
-        price: 3.5,
-    },
     // {
     //     name: 'Banoffee',
     //     ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, caramel chocolate Cacao Barry, white chocolate Cacao Barry, salt, sugar, cream, boiled condensed milk, mascarpone, glucose syrop, banana, banana paste GUZMAN'
     // },
-    {
-        name: 'Mango + Passsion Fruit',
-        price: 3.5,
-        // ingredients: 'water, milk, flour T00, flour T50, eggs, cream, sugar, salt, butter 83%, sour cream 20%, flower honey, mix of sugared walnuts and pecans, boiled condensed milk, lemon juice, cottage cheese, baking powder'
-    },
+    // {
+    //     name: 'Mango + Passsion Fruit',
+    //     price: 3.5,
+    //     // ingredients: 'water, milk, flour T00, flour T50, eggs, cream, sugar, salt, butter 83%, sour cream 20%, flower honey, mix of sugared walnuts and pecans, boiled condensed milk, lemon juice, cottage cheese, baking powder'
+    // },
 ]
 
 const item = ({name, price}) =>

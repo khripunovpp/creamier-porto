@@ -46,7 +46,7 @@ function App() {
                                 Menu
                             </h1>
                             <p className="header__subtitle">
-                                Eclairs
+                                Pastry
                             </p>
                         </div>
                     </header>
