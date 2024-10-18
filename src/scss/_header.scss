@@ -1,0 +1,42 @@
+@use "vars" as *;
+
+.header {
+  text-align: center;
+  color: $text;
+  font-family: "FuturaBTItalic", sans-serif;
+  line-height: 0.85;
+  $sides: 1 1 auto;
+
+  &::after {
+    content: '';
+    flex: $sides;
+  }
+
+  &__logo {
+
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__drake {
+    position: relative;
+    flex: $sides;
+
+    &-image {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      max-width: min(50vw, 700px);
+      width: auto;
+    }
+  }
+
+  &__inner {
+    flex: 0 0 auto;
+    display: flex;
+    //min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+  }
+}

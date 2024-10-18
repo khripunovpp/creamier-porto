@@ -1,13 +1,11 @@
 @use 'vars' as *;
+@use 'header' as *;
 
 @font-face {
-  font-family: 'GoodDog';
-  src: url('/fonts/GoodDog.eot');
-  src: url('/fonts/GoodDog.eot?#iefix') format('embedded-opentype'),
-  url('/fonts/GoodDog.woff2') format('woff2'),
-  url('/fonts/GoodDog.woff') format('woff'),
-  url('/fonts/GoodDog.ttf') format('truetype'),
-  url('/fonts/GoodDog.svg#GoodDog') format('svg');
+  font-family: 'FuturaBTItalic';
+  src: url('/fonts/FuturaBT-MediumItalic.woff2');
+  src: url('/fonts/FuturaBT-MediumItalic.woff2') format('woff2'),
+  url('/fonts/FuturaBT-MediumItalic.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -33,9 +31,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  &.no-scroll {
-    overflow: hidden;
-  }
+  scrollbar-gutter: stable both-edges;
+
+  //&.no-scroll {
+  //  overflow: hidden;
+  //}
 }
 
 .container {
@@ -64,14 +64,10 @@ img {
   --hover: transparent;
   color: $text;
   font-weight: 700;
-  padding: 33px 48px;
-  font-family: "GoodDog", sans-serif;
+  padding: 0;
+  font-family: "FuturaBT", sans-serif;
   font-size: min(10vw, 60px);
   width: fit-content;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0.1 0 8.6 2.9'%3E%3Cpath d='M 4.8 0.3 C 0 -0.6 -1.1 2 3.8 2.7 C 7.7 3.2 8.7 1.8 6.2 0.7' stroke='%23" + $buttonBorderColorForSVG +  "' stroke-width='0.1' fill='none'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: 115% 100%, auto;
-  background-position: 20% 50%;
   cursor: pointer;
   transition: all 500ms;
   appearance: none;
@@ -80,18 +76,6 @@ img {
   position: relative;
   -webkit-tap-highlight-color: rgba($text, 0.1);
 
-  &:after {
-    content: '';
-    background-image: radial-gradient(var(--hover) 60%, transparent 63%);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 500ms ease;
-  }
 }
 
 
@@ -142,7 +126,7 @@ img {
   border: none;
   color: $text;
   cursor: pointer;
-  font-family: "GoodDog", sans-serif;
+  font-family: "FuturaBTItalic", sans-serif;
   padding: 0;
   width: 30px;
   height: 30px;
@@ -177,7 +161,7 @@ img {
   }
 
   &__bg {
-    position: absolute;
+    position: fixed;
     left: 50%;
     top: 50%;
     width: 160%;
@@ -188,7 +172,7 @@ img {
     justify-content: center;
     align-items: center;
     min-width: 800px;
-    opacity: 0.25;
+    opacity: 0.1;
 
     img {
     }
@@ -205,57 +189,10 @@ img {
   }
 }
 
-.header {
-  text-align: center;
-  color: $text;
-  font-family: "GoodDog", sans-serif;
-  line-height: 0.85;
-  display: flex;
-  $sides: 1 1 auto;
-
-  &::after {
-    content: '';
-    flex: $sides;
-  }
-
-  &__title {
-    font-size: min(25vw, 370px);
-    margin: 0;
-    text-shadow: -0.03em 0.08em 0 $captionShadow;
-    text-transform: uppercase;
-  }
-
-  &__subtitle {
-    font-size: min(17vw, 240px);
-    margin: 0;
-  }
-
-  &__drake {
-    position: relative;
-    flex: $sides;
-
-    &-image {
-      position: absolute;
-      top: 50%;
-      right: 15px;
-      transform: translateY(-50%);
-      max-width: min(50vw, 700px);
-      width: auto;
-    }
-  }
-
-  &__inner {
-    flex: 0 0 auto;
-    display: flex;
-    //min-height: 100vh;
-    flex-direction: column;
-    align-items: center;
-  }
-}
 
 .menu {
   color: $text;
-  font-family: "GoodDog", sans-serif;
+  font-family: "FuturaBTItalic", sans-serif;
   font-size: min(10vw, 60px);
   margin-bottom: 40px;
 
@@ -328,8 +265,8 @@ img {
   &__link {
     color: $text;
     text-decoration: none;
-    font-family: "GoodDog", sans-serif;
-    font-size: min(8vw, 50px);
+    font-family: "FuturaBTItalic", sans-serif;
+    font-size: min(8vw, 35px);
     display: block;
     margin-top: 20px;
     cursor: pointer;
@@ -343,7 +280,7 @@ img {
     font-size: min(15vw, 50px);
     line-height: 0.9;
     margin: 0 0 30px;
-    font-family: "GoodDog", sans-serif;
+    font-family: "FuturaBTItalic", sans-serif;
     text-align: center;
     white-space: pre-wrap;
   }
@@ -412,59 +349,6 @@ img {
   margin-top: 40px;
 }
 
-.line {
-  position: absolute;
-  z-index: 1;
-
-  img {
-    display: block;
-  }
-
-  &-1 {
-    left: 0;
-    top: 0;
-    @media screen and (max-width: 500px) {
-      width: 200px;
-    }
-    @media screen and (max-width: 500px) {
-      width: 140px;
-    }
-  }
-
-  &-2 {
-    right: 0;
-    top: 0;
-    @media screen and (max-width: 1000px) {
-      width: 100px;
-    }
-    @media screen and (max-width: 500px) {
-      width: 50px;
-    }
-  }
-
-  &-3 {
-    left: 0;
-    bottom: 0;
-    @media screen and (max-width: 1100px) {
-      width: 200px;
-    }
-    @media screen and (max-width: 600px) {
-      width: 120px;
-    }
-  }
-
-  &-4 {
-    right: 0;
-    bottom: 0;
-
-    @media screen and (max-width: 1100px) {
-      width: 200px;
-    }
-    @media screen and (max-width: 600px) {
-      width: 80px;
-    }
-  }
-}
 
 .countlist {
   list-style: none;
