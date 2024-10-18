@@ -1,13 +1,24 @@
 @use 'vars' as *;
 @use 'header' as *;
+@use 'menu' as *;
 
 @font-face {
-  font-family: 'FuturaBTItalic';
+  font-family: 'FuturaBT';
   src: url('/fonts/FuturaBT-MediumItalic.woff2');
   src: url('/fonts/FuturaBT-MediumItalic.woff2') format('woff2'),
   url('/fonts/FuturaBT-MediumItalic.woff') format('woff');
   font-weight: normal;
-  font-style: normal;
+  font-style: italic;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'FuturaBT';
+  src: url('/fonts/FuturaBT-BoldItalic.woff2');
+  src: url('/fonts/FuturaBT-BoldItalic.woff2') format('woff2'),
+  url('/fonts/FuturaBT-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
   font-display: block;
 }
 
@@ -22,6 +33,7 @@ body {
   margin: 0;
   font-size-adjust: none;
   font-family: $systemFF;
+  font-style: italic;
   line-height: 1.5;
   font-weight: 400;
   background-color: $bg;
@@ -66,7 +78,7 @@ img {
   font-weight: 700;
   padding: 0;
   font-family: "FuturaBT", sans-serif;
-  font-size: min(10vw, 60px);
+  font-size: min(8vw, 60px);
   width: fit-content;
   cursor: pointer;
   transition: all 500ms;
@@ -126,7 +138,7 @@ img {
   border: none;
   color: $text;
   cursor: pointer;
-  font-family: "FuturaBTItalic", sans-serif;
+  font-family: "FuturaBT", sans-serif;
   padding: 0;
   width: 30px;
   height: 30px;
@@ -137,7 +149,7 @@ img {
 .tail {
   position: relative;
   overflow: hidden;
-  padding: min(12vw, 60px) 0 min(7vw, 40px);
+  padding: min(7vw, 60px) 0 min(7vw, 40px);
   min-height: 100vh;
 
   &__fakeOverlay {
@@ -190,74 +202,6 @@ img {
 }
 
 
-.menu {
-  color: $text;
-  font-family: "FuturaBTItalic", sans-serif;
-  font-size: min(10vw, 60px);
-  margin-bottom: 40px;
-
-  &__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__item {
-    position: relative;
-
-    &-inner {
-      display: table;
-      line-height: 1;
-      padding-top: 1em;
-      text-wrap: balance;
-      white-space: pre-wrap;
-      cursor: pointer;
-    }
-
-    &-footer {
-      font-size: initial;
-    }
-
-    span {
-      display: table-cell;
-    }
-
-    &-name {
-      position: relative;
-      overflow: hidden;
-
-    }
-
-    &-price {
-      text-align: right;
-      width: 1%; /* Trick it */
-      vertical-align: bottom;
-      padding-left: 0.5em;
-      white-space: nowrap;
-    }
-
-
-    &--withPrice {
-      .menu {
-        &__item {
-          &-name {
-            &::after {
-              content: "";
-              position: absolute;
-              bottom: 7px;
-              margin-left: 5px;
-              width: 100%;
-              border-bottom: 1px solid $text;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
 .contacts {
   margin-top: auto;
   text-align: center;
@@ -265,11 +209,18 @@ img {
   &__link {
     color: $text;
     text-decoration: none;
-    font-family: "FuturaBTItalic", sans-serif;
+    font-family: "FuturaBT", sans-serif;
     font-size: min(8vw, 35px);
     display: block;
     margin-top: 20px;
     cursor: pointer;
+
+    &--instagram {
+      img {
+        max-width: 50px;
+        opacity: 0.8;
+      }
+    }
   }
 }
 
@@ -277,10 +228,10 @@ img {
   color: $text;
 
   &__title {
-    font-size: min(15vw, 50px);
+    font-size: min(10vw, 50px);
     line-height: 0.9;
     margin: 0 0 30px;
-    font-family: "FuturaBTItalic", sans-serif;
+    font-family: "FuturaBT", sans-serif;
     text-align: center;
     white-space: pre-wrap;
   }
@@ -346,70 +297,11 @@ img {
 .footer {
   color: $text;
   text-align: center;
-  margin-top: 40px;
-}
-
-
-.countlist {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  margin-top: 20px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-
-  li {
-    flex: 1 1;
-    text-align: center;
-    background-color: $bgPopup;
-    line-height: 1;
-
-    &.active {
-      background-color: $text;
-      color: $bgPopup;
-    }
-  }
-
-  button {
-    appearance: none;
-    background-color: transparent;
-    border: none;
-    color: inherit;
-    padding: 0;
-    font-size: 25px;
-    width: 100%;
-  }
-}
-
-.total {
-  position: fixed;
-  z-index: 1;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(254, 191, 164, 0.5);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  display: flex;
-  justify-content: space-between;
-  padding: 15px;
+  margin-top: 10px;
 
   p {
     margin: 0;
-    font-size: 25px;
-    color: $text;
-    font-weight: 700;
   }
 }
 
-.button-simple {
-  appearance: none;
-  background-color: $text;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  font-family: $systemFF;
-  font-size: 16px;
-  padding: 10px 20px;
-}
+

@@ -6,6 +6,7 @@
   font-family: "FuturaBTItalic", sans-serif;
   line-height: 0.85;
   $sides: 1 1 auto;
+  margin-bottom:  min(7vw, 40px);;
 
   &::after {
     content: '';

@@ -1,0 +1,193 @@
+@use "vars" as *;
+
+.menu {
+  color: $text;
+  font-family: "FuturaBTItalic", sans-serif;
+  font-size: min(8vw, 40px);
+  margin-bottom: 40px;
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    position: relative;
+
+    &-inner {
+      display: table;
+      line-height: 1;
+      padding-bottom: 0.5em;
+      text-wrap: balance;
+      white-space: pre-wrap;
+      cursor: pointer;
+    }
+
+    &-footer {
+      font-size: initial;
+    }
+
+    span {
+      display: table-cell;
+    }
+
+    &-name {
+      position: relative;
+      overflow: hidden;
+
+    }
+
+    &-price {
+      text-align: right;
+      width: 1%; /* Trick it */
+      vertical-align: bottom;
+      padding-left: 0.5em;
+      white-space: nowrap;
+      font-weight: bold;
+    }
+
+
+    &--withPrice {
+      .menu {
+        &__item {
+          &-name {
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: 7px;
+              margin-left: 5px;
+              width: 100%;
+              border-bottom: 1px solid $text;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__cookies {
+    display: flex;
+
+    &-caption {
+      // text from bottom to top
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      text-align: right;
+      margin: 0 0 0 0;
+      padding-bottom: 13px;
+      line-height: 1;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 130%;
+    }
+
+    .menu__list {
+      padding-left: 15px;
+    }
+  }
+
+  &__eclairs {
+    margin-top: 0.5em;
+
+    &-caption {
+      max-width: 70%;
+      display: block;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  &__other {
+    padding-top: 0.5em;
+    border-top: 1px solid $text;
+  }
+}
+
+
+.countlist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  li {
+    flex: 1 1;
+    text-align: center;
+    background-color: #fff;
+    color: $bgPopup;
+    line-height: 1;
+
+    &.active {
+      background-color: $bgPopup;
+      color: #fff;
+    }
+  }
+
+  button {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    padding: 0;
+    font-size: 25px;
+    width: 100%;
+  }
+}
+
+.total {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  padding: 15px;
+  gap: 10px;
+
+  &__sum {
+    margin: 0;
+    margin-right: auto;
+    font-size: 25px;
+    color: $bgPopup;
+    font-weight: 700;
+  }
+}
+
+.button-simple {
+  appearance: none;
+  background-color: $bgPopup;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: $systemFF;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+.cart-list {
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    display: flex;
+    border-bottom: 1px solid $text;
+
+    & > * {
+      flex: 1 1;
+      text-align: right;
+
+      &:first-child {
+        text-align: left;
+      }
+    }
+
+  }
+}

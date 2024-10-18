@@ -1,6 +1,7 @@
 import {PaymentsDialog} from "./PaymentsDialog.jsx";
 import logoMenu from "/img/logoMenu.png";
 import bg from "/img/bg.png";
+import insta from "/img/instagram.svg";
 import {useAtom} from "jotai";
 import {calcMode, dialog} from "./main.jsx";
 import {Menu} from "./Menu.jsx";
@@ -38,14 +39,17 @@ function App() {
 
                         <a href="https://instagram.com/creamier.porto/"
                            className="contacts__link contacts__link--instagram"
-                           target="_blank" rel="noreferrer">
-                            <span className="contacts__link-text">Instagram</span>
+                           target="_blank"
+                           rel="noreferrer">
+                            <img src={insta}
+                                 alt="Instagram"
+                                 loading="lazy"/>
                         </a>
                     </section>
 
                     <footer className="footer">
                         <p className="footer__text">
-                            &copy; All rights reserved {year}
+                        &copy; All rights reserved {year}
                         </p>
                     </footer>
                 </section>
