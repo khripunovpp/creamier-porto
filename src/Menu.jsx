@@ -108,7 +108,6 @@ const Buttons = ({choised, name, maxItems}) => {
         })}
     </ul>
 }
-
 export const Menu = () => {
     const [showCalc] = useAtom(calcMode)
     const [items, setToCart] = useAtom(cartItems)

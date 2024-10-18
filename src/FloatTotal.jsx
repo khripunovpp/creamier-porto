@@ -2,6 +2,8 @@ import {useAtom} from "jotai";
 import {cartItems} from "./main.jsx";
 import {Dialog} from "./Dialog.jsx";
 import React from "react";
+import {addOrderToFirebase} from "./db.js";
+import toast from "react-simple-toasts";
 
 export const FloatTotal = (props) => {
     const [items, setToCart] = useAtom(cartItems)
@@ -11,11 +13,28 @@ export const FloatTotal = (props) => {
     const reset = () => {
         setToCart({})
     }
+    const add = () => {
+        const order = {
+            date: Date.now(),
+            items: Object.values(items).map(({name, price, count}) => ({name, price, count})),
+            sum
+        }
+        addOrderToFirebase(order)
+            .then(response => {
+                reset()
+                toast('Order added')
+            })
+            .catch(error => {
+                toast('Error: ' + JSON.stringify(error))
+            })
+    }
+
     return <>
         {sum > 0 ? <aside className="total">
             <p className="total__sum">{sum}€</p>
             <TotalDialog items={items}/>
             <button className="button-simple" onClick={reset}>Reset</button>
+            <button className="button-simple" onClick={add}>Send</button>
         </aside> : null}
     </>
 }
@@ -26,7 +45,7 @@ export const TotalDialog = ({items}) => {
         .toFixed(2)
 
     return (
-        <Dialog trigger={<button className="button-simple">Show</button>} title="Total">
+        <Dialog trigger={<button className="button-simple">Order</button>} title="Total">
             <ul className="cart-list">
                 {Object.values(items).map(item => {
                     const sum = (item.price * item.count).toFixed(2)
