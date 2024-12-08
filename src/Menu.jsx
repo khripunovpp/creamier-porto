@@ -19,20 +19,28 @@ const menuEclairs = [
     //     price: 4,
     // },
     {
-        name: 'pistachio',
-        ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, white chocolate Callebaut, salt, sugar, cream, cornstarch, dessert pistachio paste 40%, pistachio paste 100%',
+        name: 'eclair pistachio',
+        // ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, white chocolate Callebaut, salt, sugar, cream, cornstarch, dessert pistachio paste 40%, pistachio paste 100%',
         price: 4,
     },
     {
-        name: 'choco',
-        ingredients: '',
+        name: 'choux tangerine',
         price: 3.5,
     },
     {
-        name: 'choux blackberry \n& vanilla',
-        ingredients: 'water, milk 3.5%, butter 82.5%, sugar, flour, chicken eggs, cream 35%, blueberry puree, pectin NH, gelatin, vanilla, white chocolate 28%',
-        price: 3.5,
+        name: 'choux mulled wine',
+        price: 3.8,
     },
+    // {
+    //     name: 'choco',
+    //     ingredients: '',
+    //     price: 3.5,
+    // },
+    // {
+    //     name: 'choux blackberry \n& vanilla',
+    //     ingredients: 'water, milk 3.5%, butter 82.5%, sugar, flour, chicken eggs, cream 35%, blueberry puree, pectin NH, gelatin, vanilla, white chocolate 28%',
+    //     price: 3.5,
+    // },
     // {
     //     name: 'Raffaello \nwith Almond-Coconut Cream',
     //     ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, white chocolate Callebaut, salt, sugar, coconut milk 70%, cream 35%, almond paste, condensed milk, gelatin 220bloom, blanched almonds, vegetable oil \n',
@@ -131,38 +139,41 @@ export const Menu = () => {
     }
 
     return <main className="menu">
-        <section className="menu__cookies">
-            <p className="menu__cookies-caption">cookie</p>
-            <ul className="menu__list">
-                {menuCookies.map(it => {
-                    const {name, price, ingredients} = it
-                    return <li className="menu__item" key={name}>
-                        <IngredientsDialog key={name}
-                                           title={name}
-                                           body={ingredients}
-                                           trigger={item({name, price})}/>
+        {/*<section className="menu__cookies">*/}
+        {/*    <p className="menu__cookies-caption">cookie</p>*/}
+        {/*    <ul className="menu__list">*/}
+        {/*        {menuCookies.map(it => {*/}
+        {/*            const {name, price, ingredients} = it*/}
+        {/*            return <li className="menu__item" key={name}>*/}
+        {/*                <IngredientsDialog key={name}*/}
+        {/*                                   title={name}*/}
+        {/*                                   body={ingredients}*/}
+        {/*                                   trigger={item({name, price})}/>*/}
 
-                        <div className="menu__item-footer">
-                            {showCalc ? <Buttons choised={c => addToCart(it, c)} name={name}/> : null}
-                        </div>
-                    </li>
-                })}
-            </ul>
-        </section>
+        {/*                <div className="menu__item-footer">*/}
+        {/*                    {showCalc ? <Buttons choised={c => addToCart(it, c)} name={name}/> : null}*/}
+        {/*                </div>*/}
+        {/*            </li>*/}
+        {/*        })}*/}
+        {/*    </ul>*/}
+        {/*</section>*/}
 
         <section className="menu__eclairs">
-            <img src={eclairsCaption}
-                 alt="Eclairs"
-                 className="menu__eclairs-caption"
-                 loading="lazy"/>
+            {/*<img src={eclairsCaption}*/}
+            {/*     alt="Eclairs"*/}
+            {/*     className="menu__eclairs-caption"*/}
+            {/*     loading="lazy"/>*/}
             <ul className="menu__list">
                 {menuEclairs.map(it => {
-                    const {name, price, ingredients} = it
+                    const {name, price, ingredients} = it;
                     return <li className="menu__item" key={name}>
-                        <IngredientsDialog key={name}
+                        {ingredients
+                            ? <IngredientsDialog key={name}
                                            title={name}
                                            body={ingredients}
                                            trigger={item({name, price})}/>
+                            : item({name, price})
+                        }
 
                         <div className="menu__item-footer">
                             {showCalc ? <Buttons choised={c => addToCart(it, c)} name={name}/> : null}

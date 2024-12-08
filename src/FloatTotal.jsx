@@ -4,6 +4,7 @@ import {Dialog} from "./Dialog.jsx";
 import React from "react";
 import {addOrderToFirebase} from "./db.js";
 import toast from "react-simple-toasts";
+import copy from "copy-to-clipboard";
 
 export const FloatTotal = (props) => {
     const [items, setToCart] = useAtom(cartItems)
@@ -21,8 +22,9 @@ export const FloatTotal = (props) => {
         }
         addOrderToFirebase(order)
             .then(response => {
+                copy(response.id)
                 reset()
-                toast('Order added')
+                toast('Order added: ' + response.id,{duration: 5000})
             })
             .catch(error => {
                 toast('Error: ' + JSON.stringify(error))
