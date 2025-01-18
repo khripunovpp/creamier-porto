@@ -9,27 +9,29 @@ const menuEclairs = [
     //     ingredients: 'water, milk, flour T00, flour T50, eggs, cream, sugar, salt, butter 83%, sour cream 20%, flower honey, mix of sugared walnuts and pecans, boiled condensed milk, lemon juice, cottage cheese, baking powder',
     //     price: 4
     // },
-    // {
-    //     name: 'Rose-Raspberry \nwith vanilla cream & raspberry+rose confit',
-    //     ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, salt, sugar, cream, white chocolate Callebaut, gelatin, vanilla paste Guzman, raspberry puree, rose confit, pectin NH, lemon juice, glucose syrup, food coloring Fuksia Guzman'
-    // },
+    {
+        name: 'Rose-Raspberry \nwith vanilla cream & raspberry+rose confit',
+        price: 3.5
+        // ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, salt, sugar, cream, white chocolate Callebaut, gelatin, vanilla paste Guzman, raspberry puree, rose confit, pectin NH, lemon juice, glucose syrup, food coloring Fuksia Guzman'
+    },
     // {
     //     name: 'Golden bar \nwith Hazelnut Cream and Salted Caramel',
     //     ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, white chocolate Callebaut, milk chocolate Callebaut, sugar, salt, cream, glucose syrup, hazelnut paste, cocoa butter',
     //     price: 4,
     // },
     {
-        name: 'eclair pistachio',
+        name: 'Raffaello \nwith Almond-Coconut Cream',
+        ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, white chocolate Callebaut, salt, sugar, coconut milk 70%, cream 35%, almond paste, condensed milk, gelatin 220bloom, blanched almonds, vegetable oil \n',
+        price: 3
+    },
+    {
+        name: 'Pistachio',
         // ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, white chocolate Callebaut, salt, sugar, cream, cornstarch, dessert pistachio paste 40%, pistachio paste 100%',
         price: 4,
     },
     {
-        name: 'choux tangerine',
+        name: 'Choux tangerine',
         price: 3.5,
-    },
-    {
-        name: 'choux mulled wine',
-        price: 3.8,
     },
     // {
     //     name: 'choco',
@@ -40,11 +42,6 @@ const menuEclairs = [
     //     name: 'choux blackberry \n& vanilla',
     //     ingredients: 'water, milk 3.5%, butter 82.5%, sugar, flour, chicken eggs, cream 35%, blueberry puree, pectin NH, gelatin, vanilla, white chocolate 28%',
     //     price: 3.5,
-    // },
-    // {
-    //     name: 'Raffaello \nwith Almond-Coconut Cream',
-    //     ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, white chocolate Callebaut, salt, sugar, coconut milk 70%, cream 35%, almond paste, condensed milk, gelatin 220bloom, blanched almonds, vegetable oil \n',
-    //     price: 3
     // },
     // {
     //     name: 'Choux \nLemon+Basil',
