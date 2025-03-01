@@ -294,6 +294,25 @@ img {
   }
 }
 
+.stripe-payment {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+
+  &__or {
+
+    font-size: 18px;
+  }
+
+  &__link {
+    font-weight: 600;
+    display: block;
+    color: #fff;
+    font-size: 32px;
+  }
+}
+
 .footer {
   color: $text;
   text-align: center;

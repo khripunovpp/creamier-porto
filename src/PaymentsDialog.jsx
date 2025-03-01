@@ -64,19 +64,19 @@ const paymentsList = () => {
         toast(`${name} has been copied`)
     }
     return (payments.map(({label, value}) => (
-            <li key={label} className="payments-list__item" onClick={() => handleCopy(label, value)}>
-                <div className="payments-list__item-inner">
-                    <span className="payments-list__item-label">{label}</span>
-                    <span className="payments-list__item-value">{value}</span>
-                </div>
-                <div className="payments-list__item-copy">
-                    <button
-                        className="copy">
-                        {icon}
-                    </button>
-                </div>
-            </li>
-        )))
+        <li key={label} className="payments-list__item" onClick={() => handleCopy(label, value)}>
+            <div className="payments-list__item-inner">
+                <span className="payments-list__item-label">{label}</span>
+                <span className="payments-list__item-value">{value}</span>
+            </div>
+            <div className="payments-list__item-copy">
+                <button
+                    className="copy">
+                    {icon}
+                </button>
+            </div>
+        </li>
+    )))
 }
 
 export const PaymentsDialog = () => {
@@ -85,6 +85,13 @@ export const PaymentsDialog = () => {
             <ul className="payments-list">
                 {paymentsList()}
             </ul>
+            <div className="stripe-payment">
+                <span className="stripe-payment__or">or</span>
+                <a href="https://buy.stripe.com/bIY7uqdgX49u8Gk3cd" target="_blank" className="stripe-payment__link">
+                    Pay by card
+                </a>
+            </div>
+
         </Dialog>
     )
 }
