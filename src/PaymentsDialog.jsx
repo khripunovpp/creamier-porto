@@ -87,7 +87,7 @@ export const PaymentsDialog = () => {
             </ul>
             <div className="stripe-payment">
                 <span className="stripe-payment__or">or</span>
-                <a href="https://buy.stripe.com/bIY7uqdgX49u8Gk3cd" target="_blank" className="stripe-payment__link">
+                <a href="https://revolut.me/pashtitto" target="_blank" className="stripe-payment__link">
                     Pay by card
                 </a>
             </div>

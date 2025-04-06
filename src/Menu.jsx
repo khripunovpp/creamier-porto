@@ -25,21 +25,41 @@ const menuEclairs = [
     //     price: 3
     // },
     {
-        name: 'Pistachio',
+        name: 'eclair pistachio',
         // ingredients: 'water, milk, flour T00, flour T50, eggs, butter 83%, white chocolate Callebaut, salt, sugar, cream, cornstarch, dessert pistachio paste 40%, pistachio paste 100%',
-        price: 4,
+        price: 4.5,
     },
     // {
     //     name: 'Choux tangerine',
     //     price: 3.5,
     // },
     {
-        name: 'CHOCO',
+        name: 'eclair caramel',
         ingredients: '',
         price: 3.5,
     },
     {
-        name: 'Macaroon (all flavors)',
+        name: 'choux strawberries with mascarpone',
+        ingredients: '',
+        price: 4.0,
+    },
+    {
+        name: 'cottage cheese rings',
+        ingredients: '',
+        price: 3.5,
+    },
+    {
+        name: 'macaroon (all flavors)',
+        ingredients: '',
+        price: 2.5,
+    },
+    {
+        name: 'biscuits with nuts (pack)',
+        ingredients: '',
+        price: 3.5,
+    },
+    {
+        name: 'chouquettes (pack)',
         ingredients: '',
         price: 2.5,
     },
